@@ -1,0 +1,40 @@
+{
+  "name": "karmelek",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "bin": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx nodemon index.ts",
+    "build": "tsc && pkg . --out-path=build",
+    "start": "node dist/index.js"
+  },
+  "pkg": {
+    "assets": [
+      "node_modules/@discordjs/opus/prebuild/*"
+    ],
+    "targets": [
+    "node20-win-x64"
+    ] 
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/opus": "^0.10.0",
+    "@discordjs/voice": "^0.18.0",
+    "description": "^0.0.4",
+    "discord.js": "^14.19.3",
+    "dotenv": "^10.0.0",
+    "ffmpeg-static": "^5.2.0",
+    "typescript": "^5.8.3",
+    "wokcommands": "^2.1.9"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.21",
+    "@types/ws": "^8.18.1",
+    "esbuild": "^0.25.5",
+    "pkg": "^5.8.1"
+  }
+}

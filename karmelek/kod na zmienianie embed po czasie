@@ -1,0 +1,14 @@
+!Do callback trza dodat async!
+
+const newMessage = await message.reply({
+            embeds: [embed]
+        })
+
+        await new Promise(resolve => setTimeout(resolve, 5000))
+
+        const newEmbed = newMessage.embeds[0]
+        newEmbed.setTitle('Edycja')
+
+        newMessage.edit({
+            embeds: [newEmbed],
+        })
