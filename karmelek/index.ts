@@ -24,7 +24,7 @@
     });
 
     client.on('ready', () => {
-        console.log('🆗Karmelek zyje')
+        console.log('Karmelek zyje')
 
         new WOKCommands({
             client,
@@ -89,21 +89,21 @@ client.on('messageCreate', async (message) => {
   if (message.author.bot) return;
   if (message.content.toLowerCase() !== 'kicikici') return;
 
-  await message.channel.send('🔊 Masz jedzonko?');
-  console.log('➡️ Odebrano wiadomość "kicikici", odpowiadam i próbuję dołączyć do VC');
+  await message.channel.send('Masz jedzonko?');
+  console.log('proba dolaczenia do vc');
 
   const member = message.member;
   const voiceChannel = member?.voice?.channel;
 
   if (!voiceChannel) {
-    message.channel.send('😿 Nie jesteś na kanale głosowym!');
-    console.log('❌ Użytkownik nie jest na kanale głosowym, kończę');
+    message.channel.send('klamiesz! nie masz jedzonka!');
+    console.log('uzyt. nie na vc');
     return;
   }
-  console.log(`➡️ Użytkownik jest na kanale głosowym: ${voiceChannel.name}`);
+  console.log(`wykryto vc: ${voiceChannel.name}`);
 
   try {
-    console.log('➡️ Próba dołączenia do kanału głosowego...');
+    console.log('probuje dolaczyc do vc...');
 
     
 
@@ -119,27 +119,27 @@ connection.on('stateChange', (oldState, newState) => {
 
 try {
   await entersState(connection, VoiceConnectionStatus.Ready, 30000);
-  console.log('Połączenie głosowe jest gotowe!');
+  console.log('wszystko gitez');
 } catch (error) {
-  console.error('Błąd połączenia:', error);
+  console.error('taki blad:', error);
 }
 
  const player = createAudioPlayer();
     const resource = createAudioResource(path.join(__dirname, 'miau.mp3'));
 
     connection.subscribe(player);
-    console.log('➡️ Subskrybowano player, startuję odtwarzanie...');
+    console.log('dzwiek leci...');
     player.play(resource);
 
     player.once(AudioPlayerStatus.Idle, () => {
-      console.log('⏹️ Odtwarzanie zakończone, niszczę połączenie');
+      console.log('dziwiek sie skonczyl');
       connection.destroy();
     });
 
 
   } catch (error) {
-    console.error('❌ Błąd podczas dołączania:', error);
-    message.channel.send('❌ Wystąpił błąd podczas dołączania do kanału głosowego.');
+    console.error('blad przy dolaczaniu:', error);
+    message.channel.send('zgubilem siem');
   }
 });
 
